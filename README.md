@@ -1,5 +1,7 @@
 # animate-on-scroll
 
+Requires vue-cli to run ```npm run serve```
+
 ## Project setup
 ```
 npm install

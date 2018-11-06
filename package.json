@@ -8,6 +8,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "ks-vue-scrollmagic": "^1.0.2",
+    "scrollmagic": "^2.0.6",
     "vue": "^2.5.17"
   },
   "devDependencies": {
