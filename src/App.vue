@@ -1,13 +1,14 @@
 <template>
     <div id="app">
 
+        <triangle-scene></triangle-scene>
 
-            <triangle-scene></triangle-scene>
-
+        <helmet-scene></helmet-scene>
 
         <div class="infoScene" id="infoScene">
             <info-scene></info-scene>
         </div>
+
         <!--<div id="scene2" style="height:1px"></div>-->
 
 
@@ -28,6 +29,7 @@
 
 <script>
   import TriangleScene from './components/TriangleScene.vue';
+  import HelmetScene from './components/Helmet3D.vue';
   import InfoScene from './components/InfoScene.vue';
 
   export default {
@@ -208,6 +210,7 @@
     },
     components: {
       TriangleScene,
+      HelmetScene,
       InfoScene
     }
   }

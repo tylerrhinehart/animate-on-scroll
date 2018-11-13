@@ -40,7 +40,7 @@
         const sections = 4;
 
         // Create a new Timeline (equivalent to new TimelineMax())
-        const tl = new this.$gsap.TimelineMax()
+        const tl = new this.$gsap.TimelineMax();
 
         let ww = window.innerWidth;
         let wh = window.innerHeight;
