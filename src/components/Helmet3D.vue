@@ -63,8 +63,19 @@
 
         var loader = new THREE.GLTFLoader();
 
-        loader.load('/assets/3DModels/StormTrooper/scene.gltf', function (gltf) {
-          this.helmet1.add(gltf.scene);
+        loader.load('/assets/3DModels/Head/LeePerrySmith.glb', function (gltf) {
+          var mesh = gltf.scene.children[ 0 ];
+          var group = new THREE.Group();
+          // group.scale.multiplyScalar( 50 );
+          scene.add( group );
+          // To make sure that the matrixWorld is up to date for the boxhelpers
+          // group.updateMatrixWorld( true );
+          var edges = new THREE.EdgesGeometry( mesh.geometry );
+          var line = new THREE.LineSegments( edges );
+          line.material.depthTest = true;
+          line.material.opacity = 0.25;
+          line.material.transparent = true;
+          group.add( line );
         }.bind(this));
         loader.load('/assets/3DModels/StormTrooper/scene.gltf', function (gltf) {
           this.helmet2.add(gltf.scene);
@@ -80,17 +91,17 @@
 
         animate();
 
-        var scrollPos = 0;
+        // var scrollPos = 0;
 
-        function rotateOnScroll(obj) {
-          var rotation = 0.1;
-          if (window.pageYOffset > scrollPos) {
-            rotation *= -1;
-          }
-          scrollPos = window.pageYOffset;
-
-          obj.rotation.y += rotation;
-        }
+        // function rotateOnScroll(obj) {
+        //   var rotation = 0.1;
+        //   if (window.pageYOffset > scrollPos) {
+        //     rotation *= -1;
+        //   }
+        //   scrollPos = window.pageYOffset;
+        //
+        //   obj.rotation.y += rotation;
+        // }
 
         // window.addEventListener('scroll', function (e) {
         //   rotateOnScroll(parent);
